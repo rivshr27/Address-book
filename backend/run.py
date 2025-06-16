@@ -2,7 +2,8 @@ import os
 import sys
 from pathlib import Path
 
-# Add the current directory to Python path
+# the current directory to Python path
+
 current_dir = Path(__file__).resolve().parent
 sys.path.insert(0, str(current_dir))
 

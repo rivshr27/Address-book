@@ -25,6 +25,7 @@ app.include_router(api_router, prefix=settings.API_V1_STR)
 @app.on_event("startup")
 async def startup_event():
     # Initialize database
+
     init_db()
     # Create initial data
     db = SessionLocal()

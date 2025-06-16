@@ -28,12 +28,14 @@ const Register: React.FC = () => {
   const validate = () => {
     const errors: { email?: string; password?: string } = {};
     // Email validation
+    
     if (!formData.email.trim()) {
       errors.email = "Email is required";
     } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
       errors.email = "Enter a valid email address";
     }
     // Password validation (min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special char)
+
     if (!formData.password) {
       errors.password = "Password is required";
     } else if (

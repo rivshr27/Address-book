@@ -1,5 +1,7 @@
 # Address Book Application
 
+![App Banner](frontend/src/images/banner.png)
+
 A full-stack Address Book web application built with React (frontend) and FastAPI (backend). This app allows users to manage their contacts with features like add, edit, delete, search, and pagination.
 
 ---
@@ -55,6 +57,11 @@ V_A/
 │   │   │   └── Contacts.tsx
 │   │   ├── services/
 │   │   │   └── api.ts
+│   │   ├── images/
+│   │   │   ├── banner.png
+│   │   │   ├── login.png
+│   │   │   ├── register.png
+│   │   │   └── contacts.png
 │   │   └── App.tsx
 │   └── ...
 ├── backend/
@@ -108,7 +115,9 @@ V_A/
    ```
    The API will be available at `http://localhost:8000`
 
-### Frontend Setup
+---
+
+## Frontend Setup
 
 1. **Install dependencies:**
    ```sh
@@ -138,13 +147,22 @@ V_A/
 1. **Login:**  
    Enter your credentials to log in. (Registration flow depends on backend.)
 
-2. **Manage Contacts:**  
+   ![Login Page](frontend/src/images/login.png)
+
+2. **Register:**  
+   Create a new account if you don't have one.
+
+   ![Register Page](frontend/src/images/register.png)
+
+3. **Manage Contacts:**  
    - Click "Add New Contact" to create a contact.
    - Edit or delete existing contacts using the action buttons.
    - Use pagination controls to navigate through contacts.
    - Select rows per page as needed.
 
-3. **Logout:**  
+   ![Contacts Page](frontend/src/images/contacts.png)
+
+4. **Logout:**  
    Use the logout button in the header to securely log out.
 
 ---
@@ -222,7 +240,7 @@ MIT License
 
 ## Screenshots
 
-> Add screenshots of your app here for better documentation.
+> Add more screenshots of your app here for better documentation.
 
 ---
 
@@ -230,5 +248,4 @@ MIT License
 
 - [Material-UI](https://mui.com/)
 - [React](https://react.dev/)
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [PostgreSQL](https://www.postgresql.org/)
+-

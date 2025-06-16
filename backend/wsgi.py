@@ -1,7 +1,7 @@
 import os
 import sys
 
-# Add the parent directory to Python path
+# Adding  the parent directory to Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend.app.main import app
