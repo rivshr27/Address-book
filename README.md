@@ -1,13 +1,13 @@
- # Address Book Application
+# Address Book Application
 
-A full-stack Address Book web application built with React (frontend) and a backend API (customize as per your stack, e.g., Django, Node.js, etc.). This app allows users to manage their contacts with features like add, edit, delete, search, and pagination.
+A full-stack Address Book web application built with React (frontend) and FastAPI (backend). This app allows users to manage their contacts with features like add, edit, delete, search, and pagination.
 
 ---
 
 ## Features
 
-- User authentication (token-based)
-- Add, edit, and delete contacts
+- User authentication with JWT (token-based)
+- Add, edit, and delete contacts (CRUD)
 - Responsive and modern UI using Material-UI (MUI)
 - Pagination and rows-per-page selection
 - Duplicate email/phone validation
@@ -16,6 +16,9 @@ A full-stack Address Book web application built with React (frontend) and a back
 - Error handling and form validation
 - Protected routes (only logged-in users can access contacts)
 - Logout functionality
+- PostgreSQL database (backend)
+- Input validation (backend and frontend)
+- Swagger documentation (backend)
 
 ---
 
@@ -28,12 +31,16 @@ A full-stack Address Book web application built with React (frontend) and a back
 - [Material-UI (MUI)](https://mui.com/)
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/) (for API requests)
+- [Vite](https://vitejs.dev/) (for fast development)
 
 ### Backend
 
-- **Replace with your backend stack:**  
-  - Example: [Django REST Framework](https://www.django-rest-framework.org/)  
-  - Example: [Express.js](https://expressjs.com/) with [Node.js](https://nodejs.org/)
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [SQLAlchemy](https://www.sqlalchemy.org/)
+- [Pydantic](https://pydantic.dev/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Uvicorn](https://www.uvicorn.org/) (ASGI server)
+- JWT authentication
 
 ---
 
@@ -51,19 +58,55 @@ V_A/
 │   │   └── App.tsx
 │   └── ...
 ├── backend/
-│   └── ... (your backend code)
+│   └── ... (backend code)
 └── README.md
 ```
 
 ---
 
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - Node.js (v18+ recommended)
 - npm or yarn
-- Backend API running (see backend/README.md for setup)
+- Python 3.8+
+- PostgreSQL
+- pip (Python package manager)
+
+---
+
+## Getting Started
+
+### Backend Setup
+
+1. **Create a virtual environment:**
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. **Create a `.env` file in the backend directory:**
+   ```
+   POSTGRES_SERVER=localhost
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=your_password
+   POSTGRES_DB=addressbook
+   ```
+
+4. **Create the database:**
+   ```sh
+   createdb addressbook
+   ```
+
+5. **Run the backend:**
+   ```sh
+   uvicorn app.main:app --reload
+   ```
+   The API will be available at `http://localhost:8000`
 
 ### Frontend Setup
 
@@ -80,17 +123,13 @@ V_A/
 
 3. **Run the frontend:**
    ```sh
-   npm start
+   npm run dev
    # or
-   yarn start
+   yarn dev
    ```
 
 4. **Access the app:**  
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Backend Setup
-
-- See `backend/README.md` for backend installation and running instructions.
+   Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
@@ -110,15 +149,35 @@ V_A/
 
 ---
 
-## API Endpoints (Example)
+## API Documentation
 
-> Update according to your backend implementation.
+Once the backend is running, you can access:
+- Swagger UI: `http://localhost:8000/docs`
+- ReDoc: `http://localhost:8000/redoc`
 
-- `POST /api/login/` — Authenticate user and return token
-- `GET /api/contacts/` — List all contacts
-- `POST /api/contacts/` — Create a new contact
-- `PUT /api/contacts/{id}/` — Update a contact
-- `DELETE /api/contacts/{id}/` — Delete a contact
+---
+
+## API Endpoints
+
+### Authentication
+- POST `/api/auth/register` - Register a new user
+- POST `/api/auth/token` - Login and get access token
+
+### Contacts
+- GET `/api/contacts` - List all contacts
+- POST `/api/contacts` - Create a new contact
+- GET `/api/contacts/{contact_id}` - Get a specific contact
+- PUT `/api/contacts/{contact_id}` - Update a contact
+- DELETE `/api/contacts/{contact_id}` - Delete a contact
+
+---
+
+## Security
+
+- All endpoints except registration and login require authentication
+- Passwords are hashed using bcrypt
+- JWT tokens are used for authentication
+- Input validation is performed using Pydantic (backend) and form validation (frontend)
 
 ---
 
@@ -171,4 +230,5 @@ MIT License
 
 - [Material-UI](https://mui.com/)
 - [React](https://react.dev/)
-- [Your backend framework]
+- [FastAPI](https://fastapi.tiangolo.com/)
+- [PostgreSQL](https://www.postgresql.org/)

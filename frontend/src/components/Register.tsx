@@ -23,6 +23,28 @@ const Register: React.FC = () => {
   });
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string }>({});
+
+  const validate = () => {
+    const errors: { email?: string; password?: string } = {};
+    // Email validation
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
+      errors.email = "Enter a valid email address";
+    }
+    // Password validation (min 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special char)
+    if (!formData.password) {
+      errors.password = "Password is required";
+    } else if (
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(formData.password)
+    ) {
+      errors.password =
+        "Password must be at least 8 characters, include uppercase, lowercase, number, and special character";
+    }
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,10 +52,13 @@ const Register: React.FC = () => {
       ...prev,
       [name]: value,
     }));
+    setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+    setError("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     try {
       await auth.register(formData);
       navigate("/login");
@@ -87,6 +112,8 @@ const Register: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               variant="outlined"
+              error={!!fieldErrors.email}
+              helperText={fieldErrors.email}
             />
             <TextField
               margin="normal"
@@ -100,6 +127,8 @@ const Register: React.FC = () => {
               value={formData.password}
               onChange={handleChange}
               variant="outlined"
+              error={!!fieldErrors.password}
+              helperText={fieldErrors.password}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
