@@ -65,7 +65,7 @@ V_A/
 │   │   └── App.tsx
 │   └── ...
 ├── backend/
-│   └── ... (backend code)
+│   └── ... (backend code)(Fast Api and rest other)
 └── README.md
 ```
 
@@ -123,8 +123,7 @@ V_A/
    ```sh
    cd frontend
    npm install
-   # or
-   yarn install
+   
    ```
 
 2. **Configure API endpoint:**
@@ -133,8 +132,7 @@ V_A/
 3. **Run the frontend:**
    ```sh
    npm run dev
-   # or
-   yarn dev
+   
    ```
 
 4. **Access the app:**  
@@ -147,12 +145,12 @@ V_A/
 1. **Login:**  
    Enter your credentials to log in. (Registration flow depends on backend.)
 
-   ![Login Page](frontend/src/images/login.png)
+   ![Login Page](frontend/src/images/signin.png)
 
 2. **Register:**  
    Create a new account if you don't have one.
 
-   ![Register Page](frontend/src/images/register.png)
+   ![Register Page](frontend/src/images/signup.png)
 
 3. **Manage Contacts:**  
    - Click "Add New Contact" to create a contact.
@@ -160,7 +158,9 @@ V_A/
    - Use pagination controls to navigate through contacts.
    - Select rows per page as needed.
 
-   ![Contacts Page](frontend/src/images/contacts.png)
+   ![Contacts Page](frontend/src/images/Contact-page.png)
+   ![Contact Display](frontend/src/images/Contact.png)
+    ![Contact Form Display](frontend/src/images/Contact-form.png)
 
 4. **Logout:**  
    Use the logout button in the header to securely log out.
@@ -233,8 +233,8 @@ MIT License
 
 ## Author
 
-- [Your Name](https://github.com/yourusername)
-- [Project Repository](https://github.com/yourusername/address-book-app)
+- [Your Name](https://github.com/rivshr27)
+- [Project Repository](https://github.com/rivshr27address-book)
 
 ---
 
