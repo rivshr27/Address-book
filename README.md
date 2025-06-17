@@ -101,10 +101,11 @@ V_A/
 
 3. **Create a `.env` file in the backend directory:**
    ```
-   POSTGRES_SERVER=localhost
-   POSTGRES_USER=postgres
-   POSTGRES_PASSWORD=your_password
-   POSTGRES_DB=addressbook
+   MYSQL_SERVER=localhost
+   MYSQL_USER=root
+   MYSQL_PASSWORD=your_password
+   MYSQL_DB=addressbook
+
    ```
 
 4. **Create the database:**
