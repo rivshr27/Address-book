@@ -18,7 +18,7 @@ A full-stack Address Book web application built with React (frontend) and FastAP
 - Error handling and form validation
 - Protected routes (only logged-in users can access contacts)
 - Logout functionality
-- PostgreSQL database (backend)
+- MySQL database (backend)
 - Input validation (backend and frontend)
 - Swagger documentation (backend)
 
@@ -40,7 +40,7 @@ A full-stack Address Book web application built with React (frontend) and FastAP
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [Pydantic](https://pydantic.dev/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [MySQL](https://www.MySQL.org/)
 - [Uvicorn](https://www.uvicorn.org/) (ASGI server)
 - JWT authentication
 
@@ -79,7 +79,7 @@ V_A/
 - Node.js (v18+ recommended)
 - npm or yarn
 - Python 3.8+
-- PostgreSQL
+- MySQL
 - pip (Python package manager)
 
 ---
