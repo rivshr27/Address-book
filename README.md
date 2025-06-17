@@ -222,9 +222,6 @@ Once the backend is running, you can access:
 
 ## Customization
 
-- **Theme:**  
-  Modify MUI theme in `frontend/src/theme.ts` (if present).
-
 - **Validation:**  
   Adjust validation logic in `Contacts.tsx` as needed.
 
