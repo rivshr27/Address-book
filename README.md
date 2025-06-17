@@ -54,7 +54,9 @@ V_A/
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Layout.tsx
-│   │   │   └── Contacts.tsx
+│   │   │   ├── Contacts.tsx
+│   │   │   ├── Login.tsx
+│   │   │   └── Register.tsx
 │   │   ├── services/
 │   │   │   └── api.ts
 │   │   ├── images/
@@ -65,8 +67,9 @@ V_A/
 │   │   └── App.tsx
 │   └── ...
 ├── backend/
-│   └── ... (backend code)(Fast Api and rest other)
+│   └── ... (FastAPI backend code(and rest code too)
 └── README.md
+
 ```
 
 ---
