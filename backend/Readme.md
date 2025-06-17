@@ -1,14 +1,18 @@
 # Address Book API
 
-A RESTful API for managing contacts built with FastAPI and MySQL.
+A RESTful API for managing contacts, built with FastAPI and MySQL.
+
+---
 
 ## Features
 
 - User authentication with JWT
 - CRUD operations for contacts
-- MySQL database
-- Input validation
-- Swagger documentation
+- MySQL database integration
+- Input validation with Pydantic
+- Interactive API documentation (Swagger & ReDoc)
+
+---
 
 ## Prerequisites
 
@@ -16,71 +20,85 @@ A RESTful API for managing contacts built with FastAPI and MySQL.
 - MySQL
 - pip (Python package manager)
 
-## Setup
+---
 
-1. Create a virtual environment:
+## Setup Instructions
 
-bash
+### 1. Create a Virtual Environment
+
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
+### 2. Install Dependencies
 
-2. Install dependencies:
-
-bash
+```bash
 pip install -r requirements.txt
+```
 
+### 3. Configure Environment Variables
 
-3. Create a .env file in the backend directory with the following content:
+Create a `.env` file in the `backend` directory with the following content:
 
-
+```
 MYSQL_SERVER=localhost
 MYSQL_USER=root
 MYSQL_PASSWORD=your_password
 MYSQL_DB=addressbook
+```
 
+### 4. Create the Database
 
-4. Create the database:
-
-bash
+```bash
 # Using MySQL command line
 mysql -u root -p
 CREATE DATABASE addressbook;
+```
 
+### 5. Run the Application
 
-5. Run the application:
-
-bash
+```bash
 uvicorn app.main:app --reload
+```
 
+The API will be available at [http://localhost:8000](http://localhost:8000)
 
-The API will be available at http://localhost:8000
+---
 
 ## API Documentation
 
-Once the application is running, you can access:
+- **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
+- **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
+---
 
 ## API Endpoints
 
 ### Authentication
 
-- POST /api/auth/register - Register a new user
-- POST /api/auth/token - Login and get access token
+- `POST /api/auth/register` — Register a new user
+- `POST /api/auth/token` — Login and get access token
 
 ### Contacts
 
-- GET /api/contacts - List all contacts
-- POST /api/contacts - Create a new contact
-- GET /api/contacts/{contact_id} - Get a specific contact
-- PUT /api/contacts/{contact_id} - Update a contact
-- DELETE /api/contacts/{contact_id} - Delete a contact
+- `GET /api/contacts` — List all contacts
+- `POST /api/contacts` — Create a new contact
+- `GET /api/contacts/{contact_id}` — Get a specific contact
+- `PUT /api/contacts/{contact_id}` — Update a contact
+- `DELETE /api/contacts/{contact_id}` — Delete a contact
+
+---
 
 ## Security
 
-- All endpoints except registration and login require authentication
-- Passwords are hashed using bcrypt
+- All endpoints require authentication
+- Passwords are securely hashed using bcrypt
 - JWT tokens are used for authentication
-- Input validation is performed using Pydantic
+- Input validation is enforced using Pydantic
+
+---
+
+## License
+
+MIT License
