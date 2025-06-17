@@ -157,10 +157,28 @@ V_A/
    - Edit or delete existing contacts using the action buttons.
    - Use pagination controls to navigate through contacts.
    - Select rows per page as needed.
+ 
+ ## Contacts Page
 
-   ![Contacts Page](frontend/src/images/Contact-page.png)
-   ![Contact Display](frontend/src/images/Contact.png)
-    ![Contact Form Display](frontend/src/images/Contact-form.png)
+This is the main contacts page where you can view all your saved contacts.
+
+![Contacts Page](frontend/src/images/Contact-Page.png)
+
+---
+
+## Contact Display
+
+Here you can see the details of a selected contact, including their name, phone number, and email address.
+
+![Contact Display](frontend/src/images/Contact.png)
+
+---
+
+## Contact Form
+
+Use this form to add a new contact or edit an existing one. Fill in the required fields and submit to save the contact.
+
+![Contact Form Display](frontend/src/images/Contact-form.png)
 
 4. **Logout:**  
    Use the logout button in the header to securely log out.
@@ -238,11 +256,6 @@ MIT License
 
 ---
 
-## Screenshots
-
-> Add more screenshots of your app here for better documentation.
-
----
 
 ## Acknowledgements
 
