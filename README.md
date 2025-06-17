@@ -261,4 +261,3 @@ MIT License
 
 - [Material-UI](https://mui.com/)
 - [React](https://react.dev/)
--
