@@ -251,8 +251,8 @@ MIT License
 
 ## Author
 
-- [Your Name](https://github.com/rivshr27)
-- [Project Repository](https://github.com/rivshr27address-book)
+- [Vinit Singh](https://github.com/rivshr27)
+- [Address Book Repository](https://github.com/rivshr27address-book)
 
 ---
 
